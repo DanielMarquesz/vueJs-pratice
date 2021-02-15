@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs do Jeito Ninja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <ul v-for="item in usuarios">
+            <li>{{ item.nome | truncate('10')}}</li>
+        </ul>
+        
+    </div>
+
+    <script src="https://unpkg.com/vue"></script> <!-- Instalação do Vue -->
+    <script>
+        var app = new Vue({             // Instancia feito em uma variável global
+
+            el: "#app",                 // Definimos o elemento de um Id (Elemento Pai)
+            data: {                     // Variáveis                
+                          
+                titulo: "Vuejs do jeito brabo!",
+                usuarios: [             // Array de objetos
+                    { nome: 'Jon Wick' },
+                    { nome: 'Jon Tron' },
+                    { nome: 'Daenerys Targaryen' }
+                ]
+            },
+
+            filters: {
+                
+                toUpperCase(str){  
+                    return str.toUpperCase();
+                },
+
+                truncate(str, length){          // Corta Strings
+
+                    var output = str;
+
+                    if (output.length > length){ // Se a string for maior que o nome definido ela é cortada
+                        output = str.substring(0, length) + "..."
+                    }
+                    return output;
+                }
+
+
+
+            }
+            
+        })
+
+    </script>
+</body>
+</html>

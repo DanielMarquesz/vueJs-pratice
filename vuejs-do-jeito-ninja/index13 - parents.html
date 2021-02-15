@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs do Jeito Ninja - Aula 13</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div id="app">
+      <br><br><br><br><br>
+        <div>
+            <nav-bar></nav-bar>     
+        </div>   
+            
+        
+    </div>
+
+
+
+    <!-- Componente -->
+    <template id="nav">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <menu-bar></menu-bar>                       <!-- Componente filho -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        
+      </nav>
+    </template>
+
+    <!-- Componente -->
+    <template id="menu">
+        <ul>
+            <label> Lista não Ordenada</label>
+            <li class="nav-item active">Item 1</li>
+            <li class="nav-item active">Item 2</li>
+            <li >Item 3</li>
+        </ul>
+    </template>
+
+
+    <script src="https://unpkg.com/vue"></script> <!-- Instalação do Vue -->
+    <script>
+        Vue.component('nav-bar',{
+            template: "#nav"
+        })
+
+        Vue.component('menu-bar', {
+            template: "#menu"
+        })
+        var app = new Vue({                 // Instancia feito em uma variável global
+            
+            el: "#app",                     // Definimos o elemento de um Id (Elemento Pai)
+            data: {                         // Variáveis                
+                          
+                titulo: "Vuejs do jeito Ninja!"}
+
+                         
+             
+            
+        })
+
+    </script>
+</body>
+</html>

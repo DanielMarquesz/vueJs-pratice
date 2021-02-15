@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs do Jeito Ninja</title>
+
+    <!-- Classes Utilizadas para exemplos de v-bind -->
+    <style> 
+
+        .red{
+            color:red;
+        }
+
+        .blue{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <h1 v-if="status">{{titulo}}</h1>
+        <!-- <div v-if="usuario.id == 21">
+            Id : {{ usuario.id }}<br>
+            Nome: {{ usuario.name }}<br>
+            Profissão: {{ usuario.Developer }}<br>            
+        </div> -->
+        <!-- <p v-else>
+
+            Usuário não encontrado.
+        </p> -->
+        <!--
+        <ul>
+            <li v-for="(item, index) in linguagens">{{index}} - {{ item.nome }}</li>  "Item" se torna uma variável local dentro da tag HTML
+        </ul>
+        -->
+<!--         
+        <label for="">Nome</label>
+        <input type="text" v-model="nome">
+
+        <br><br>
+        <label for="">Telefone</label>
+        <input type="text" v-model="telefone">
+
+        <br><br>
+        <label for="">Deseja receber nossas novidades?</label>
+        <input type="radio" value="Sim" name="choice" v-model="novidades" checked>Sim
+        <input type="radio" Value="Não" name="choice"  v-model="novidades">Não
+
+
+        <br><br>
+        <label for="">Interesses</label><br><br>
+        <input type="checkbox" name="Futebol" value="Futebol" v-model="interesses"> Futebol <br>
+        <input type="checkbox" name="Formula" value="Formula" v-model="interesses"> Formula <br>
+        <input type="checkbox" name="Corrida" value="Corrida" v-model="interesses"> Corrida <br>
+
+        <br><br>
+        <label for="">Como nos conheceu?</label>
+        <select name="" id="" v-model="conheceu">
+            
+            <option value="Google">Google</option>
+            <option value="Linkedin">Linkedin</option>
+            <option value="Facebook">Facebook</option>
+        </select>
+        
+        <br><br>
+        <button type="submit">Enviar</button>
+        
+        <hr>
+
+        <h2>Dados</h2>
+
+        Nome: {{ nome }}  <br>
+        Telefone: {{ telefone }} <br>
+        Novidades: {{ novidades }} <br>
+        Interesses: {{ interesses }} <br>
+        Como nos conheceu? {{ conheceu }} -->
+        
+        <img :src="imagem" alt="">  <!-- Utilizando v-bind -->
+        <p :class="classe">         <!-- Utilizando v-bind -->
+            Lorem Ipsum
+        </p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script> <!-- Instalação do Vue -->
+    <script>
+        var app = new Vue({             // Instancia feito em uma variável global
+
+            el: "#app",                 // Definimos o elemento de um Id (Elemento Pai)
+            data: {                     // Variáveis
+                
+                status: true,
+                statusUser: false,                
+                titulo: "Vuejs do jeito brabo!",
+                imagem: "https://images.pexels.com/photos/2775834/pexels-photo-2775834.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+                classe: "blue"  
+
+                /*
+                nome: "",
+                telefone: "",
+                novidades: "",
+                interesses: [],
+                conheceu: ""
+
+                linguagens: [           // Array de Objetos
+                    {nome: "JavaScript"},
+                    {nome: "Java"},
+                    {nome: "Python"},
+                    {nome: "C#"},
+                    {nome: "PHP"}
+                ]
+                
+                usuario: {              
+                    id: 21,
+                    name: "Daniel",
+                    profession: "Developer"
+                    
+                }
+                */
+            }
+        })
+
+    </script>
+</body>
+</html>

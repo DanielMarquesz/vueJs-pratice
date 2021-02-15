@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs do Jeito Ninja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <button class="btn" v-bind:class="btnClassLimpar" v-bind:style="btnStyleEnviar">ENVIAR</button>
+        <button class="btn" v-bind:class="btnClassEnviar" v-bind:style="btnStyleLimpar">LIMPAR</button>
+        
+    </div>
+
+    <script src="https://unpkg.com/vue"></script> <!-- Instalação do Vue -->
+    <script>
+        var app = new Vue({             // Instancia feito em uma variável global
+
+            el: "#app",                 // Definimos o elemento de um Id (Elemento Pai)
+            data: {                     // Variáveis                
+                          
+                titulo: "Vuejs do jeito brabo!",
+                btnClassLimpar: {       // Um objeto criado com as classes do botão
+                    'btn-danger': true,
+                    'btn-small': false
+                },
+                btnClassEnviar: [       // Passando as classes dentro de um array
+                'btn-primary',
+                ' btn-lg'
+                ],
+
+                btnStyleEnviar: {       // Passando Css Style como Objetos via v-bind
+
+                    'font-size': '15px',
+                    'border-radius': '15px'                    
+                },
+                btnStyleLimpar: {       // Passando Css Style como Objetos via v-bind                   
+
+                    'font-size': '50px',
+                    'border-radius': '15px',
+                    'text-transform': 'lowercase'            
+                }            
+
+            }
+        })
+
+    </script>
+</body>
+</html>

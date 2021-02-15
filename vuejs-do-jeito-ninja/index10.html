@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs do Jeito Ninja - Aula 10</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        {{nome}} <br>
+        {{fullName}}
+              
+    </div>
+
+    <script src="https://unpkg.com/vue"></script> <!-- Instalação do Vue -->
+    <script>
+        var app = new Vue({             // Instancia feito em uma variável global
+            
+            el: "#app",                 // Definimos o elemento de um Id (Elemento Pai)
+            data: {                     // Variáveis                
+                          
+                titulo: "Vuejs do jeito Ninja!",
+                nome: "Daniel Marques",
+                firstName: "",
+                lastName: ""           
+            },
+
+            computed: {                 // Roda rotinas no código, mesmo se as variáveis forem alteradas.
+                toUpperCase() {
+                    return this.nome.toUpperCase()
+                },
+
+                separa() {
+                    return this.nome.split("")
+                },
+                fullName(){
+                    return this.firstName + ' ' + this.lastName;
+                }
+            },
+
+            watch: {                    // Propriedade que monitora quando uma variável se altera e executa alguma ação
+                fullName(newValue){
+                    this.updateUser();
+                }
+            },
+
+            methods: {
+                updateUser(){
+                    console.log('Usuário atualizado!')
+                }
+            }            
+            
+        })
+
+    </script>
+</body>
+</html>

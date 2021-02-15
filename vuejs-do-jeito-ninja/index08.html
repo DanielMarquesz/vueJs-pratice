@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs do Jeito Ninja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{titulo}}</h1>       
+        <form action="http://google.com">
+            <button class="btn btn-primary" v-on:click.prevent.stop="enviar()"> Clica em mim! </button>
+            <button class="btn btn-danger" v-on:click="sair()"> Sai daqui meu! </button>
+        </form>
+        
+    </div>
+
+    <script src="https://unpkg.com/vue"></script> <!-- Instalação do Vue -->
+    <script>
+        var app = new Vue({             // Instancia feito em uma variável global
+
+            el: "#app",                 // Definimos o elemento de um Id (Elemento Pai)
+            data: {                     // Variáveis                
+                          
+                titulo: "Vuejs do jeito brabo!"  
+            },
+
+            methods: {
+                enviar () {
+                    alert("Obrigado por clicar!")
+                },
+                sair() {
+                    alert("Some daqui meu!")
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

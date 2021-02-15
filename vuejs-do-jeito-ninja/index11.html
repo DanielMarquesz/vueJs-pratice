@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuejs do Jeito Ninja - Aula 11</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        
+              
+    </div>
+
+    <script src="https://unpkg.com/vue"></script> <!-- Instalação do Vue -->
+    <script>
+        var app = new Vue({                 // Instancia feito em uma variável global
+            
+            el: "#app",                     // Definimos o elemento de um Id (Elemento Pai)
+            
+                
+                // Hooks do lifecyle do Vue.js
+
+                beforeCreate() {            // Antes que qualquer objeto seja criado
+                    console.log('beforeCreate');
+                    console.log('Título', this.titulo);
+                },
+
+                created() {                 // Depois que qualquer objeto seja criado
+                    console.log('created');
+                    console.log('Titulo', this.titulo)
+                    console.log('el', this.$el);    // Referência ao elemento DOM
+                },
+
+                beforeMount() {                     //Antes que o Elemento DOM seja instanciado
+                    console.log('beforeMount');
+                    console.log('Titulo', this.titulo)
+                    console.log('el', this.$el);    // Referência ao elemento DOM
+                },
+
+                mounted() {                         //Depois que o Elemento DOM seja instanciado
+                    console.log('mounted');
+                    console.log('Titulo', this.titulo)
+                    console.log('el', this.$el);    // Referência ao elemento DOM
+                },
+
+                beforeUpdate() {            // Antes que qualquer objeto seja atualizado
+                    console.log('beforeUpdate');
+                    console.log('Titulo', this.titulo)
+                    console.log('el', this.$el);    // Referência ao elemento DOM
+                },
+
+                updated(){                  // Depois que qualquer objeto seja atualizado
+                    console.log('updated');
+                    console.log('Titulo', this.titulo)
+                    console.log('el', this.$el);    // Referência ao elemento DOM
+                },
+
+
+                data: {                     // Variáveis                
+                          
+                          titulo: "Vuejs do jeito Ninja!"}
+
+                         
+             
+            
+        })
+
+    </script>
+</body>
+</html>
