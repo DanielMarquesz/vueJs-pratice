@@ -1,8 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <div id="app">
-  <h2>{{titulo}}</h2>
-  <h3>{{ saudacao() }}</h3>
+  <h1 v-once>{{titulo}}</h1>
+  <h1>{{ saudacao() }}</h1>
   <a v-bind:href="link">Google</a>
 </div>
 
@@ -16,6 +16,7 @@
     methods: {
       saudacao: function () {
         // Usando funções anônimas não é possível referenciar o objeto?
+        this.titulo = "Bom dia Parça!";
         return this.titulo; // Todo o objeto "Vue" é acessível
       },
     },
