@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <h2>Número Aleatório: {{aleatorio()}}</h2>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      nome: "Daniel da Conceição",
+      idade: 23 * 3,
+    },
+    methods: {
+      aleatorio() {
+        return Math.random();
+      },
+    },
+  });
+</script>
