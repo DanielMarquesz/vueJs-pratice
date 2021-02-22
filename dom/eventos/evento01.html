@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <h2>Contagem: {{contador}}</h2>
+  <button v-on:click="somar">somar 1</button>
+  <button v-on:click="subtrair">subtrair 1</button>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0,
+    },
+    methods: {
+      somar(event) {
+        console.log(event);
+        return this.contador++;
+      },
+      subtrair(evento) {
+        console.log(evento);
+        return this.contador--;
+      },
+    },
+  });
+</script>

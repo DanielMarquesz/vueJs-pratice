@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <h2>Contagem: {{contador}}</h2>
+  <button v-on:click="somar">somar 1</button>
+  <button v-on:click="subtrair">subtrair 1</button>
+  <p v-on:mousemove="atualizarXY">
+    Posição Horizontal e Vertical: {{ x }} e {{ y }}
+  </p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0,
+      x: 0,
+      y: 0,
+    },
+    methods: {
+      somar() {
+        console.log(event);
+        return this.contador++;
+      },
+      subtrair() {
+        console.log(event);
+        return this.contador--;
+      },
+      atualizarXY(e) {
+        this.x = event.clientX;
+        this.y = event.clientY;
+      },
+    },
+  });
+</script>
